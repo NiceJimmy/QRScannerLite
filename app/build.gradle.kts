@@ -64,6 +64,14 @@ dependencies {
 
     // timber
     implementation("com.jakewharton.timber:timber:4.7.1")
+
+    // QRCode
+
+    implementation("com.journeyapps:zxing-android-embedded:4.2.0") {
+        isTransitive = false
+    }
+    implementation("com.journeyapps:zxing-android-embedded:4.2.0")
+    implementation("com.google.zxing:core:3.4.1")
 }
 
 kapt {

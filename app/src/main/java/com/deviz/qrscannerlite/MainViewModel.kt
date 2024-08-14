@@ -8,19 +8,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
-    private val _isScanSelected = MutableLiveData(true)
-    val isScanSelected: LiveData<Boolean> = _isScanSelected
-
-    private val _isGenerateSelected = MutableLiveData(false)
-    val isGenerateSelected: LiveData<Boolean> = _isGenerateSelected
+    private val _isToggleBtnSelected = MutableLiveData(true)
+    val isToggleBtnSelected: LiveData<Boolean> = _isToggleBtnSelected
 
     fun onScanClick() {
-        _isScanSelected.value = true
-        _isGenerateSelected.value = false
+        _isToggleBtnSelected.value = true
     }
 
     fun onGenerateClick() {
-        _isScanSelected.value = false
-        _isGenerateSelected.value = true
+        _isToggleBtnSelected.value = false
     }
 }

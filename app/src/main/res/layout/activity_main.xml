@@ -9,9 +9,34 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
+        <!-- QR Scanner UI -->
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/barcode_scanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Close Button -->
+
+            <ImageView
+                android:id="@+id/top_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_x_close_w"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <!-- Toggle Buttons -->
         <LinearLayout
+            android:id="@+id/llToggleQR"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -19,9 +44,9 @@
             android:background="@drawable/btn_background_grey"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_close"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="14dp">
 
             <TextView
                 android:id="@+id/btnScan"
@@ -44,9 +69,33 @@
                 android:text="QR코드 생성"
                 android:textColor="@drawable/toggle_txt_selector"
                 android:textStyle="bold"/>
-
         </LinearLayout>
 
+        <!-- QR Angle Image -->
+        <ImageView
+            android:id="@+id/qr_angle"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="109dp"
+            app:layout_constraintTop_toBottomOf="@id/llToggleQR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/scan_msg"/>
+
+        <!-- QR Reader Description -->
+        <TextView
+            android:id="@+id/scan_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="QR 코드를 사각 테두리에 맞춰주세요!"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/qr_angle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
 
