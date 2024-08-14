@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected 상태일 때의 텍스트 컬러 -->
+    <item android:state_selected="true" android:color="@color/white" />
+    <!-- Selected 상태가 아닐 때의 텍스트 컬러 -->
+    <item android:state_selected="false" android:color="@color/black" />
+</selector>

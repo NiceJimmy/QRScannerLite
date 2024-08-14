@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -53,11 +56,14 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
     // Lifecycle dependencies
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
 
     // DataBinding dependencies
-    implementation("androidx.databinding:databinding-runtime:7.0.1")
+    implementation("androidx.databinding:databinding-runtime:8.5.2")
+
+    // timber
+    implementation("com.jakewharton.timber:timber:4.7.1")
 }
 
 kapt {
